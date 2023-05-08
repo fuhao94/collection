@@ -6,8 +6,8 @@ echo '执行命令：yarn build'
 yarn build
 
 # 进入生成的文件夹
-echo "执行命令：cd ./build\n"
-cd ./build
+echo "执行命令：cd ./dist\n"
+cd ./dist
 
 # 初始化一个仓库，仅仅是做了一个初始化的操作，项目里的文件还没有被跟踪
 echo "执行命令：git init\n"
