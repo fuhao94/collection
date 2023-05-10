@@ -8,7 +8,12 @@ import { useState } from 'react';
 
 const prefixCls = 'app-footer';
 
-const Footer: FC = () => {
+interface FooterProps {
+  total: number;
+  onTabChange: (key: string) => void;
+}
+
+const Footer: FC<FooterProps> = ({ total, onTabChange }) => {
   const [tabs, setTabs] = useState(() => [
     {
       key: 'home',
@@ -19,18 +24,17 @@ const Footer: FC = () => {
       key: 'todo',
       title: '已选',
       icon: <UnorderedListOutline />,
-      badge: '5',
     },
   ]);
   return (
     <div className={prefixCls}>
-      <TabBar>
+      <TabBar onChange={(key) => onTabChange(key)}>
         {tabs.map((item) => (
           <TabBar.Item
             key={item.key}
             icon={item.icon}
             title={item.title}
-            badge={item.badge}
+            badge={item.key === 'todo' && total > 0 && total}
           />
         ))}
       </TabBar>

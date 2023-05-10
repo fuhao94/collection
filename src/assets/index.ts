@@ -1,9 +1,10 @@
-interface Food {
+export interface Food {
   key: number;
   img: string;
   name: string;
   avatar?: string;
   chef?: string;
+  tags?: string[];
 }
 
 const cdnUrl = 'http://rubh5js51.hn-bkt.clouddn.com/';
@@ -16,6 +17,7 @@ export const foods: Food[] = [
     key: 1,
     img: getImgUrl('food-1.jpg', true),
     name: '凉拌肘子',
+    tags: ['肘子', '黄瓜'],
   },
   {
     key: 2,

@@ -11,8 +11,11 @@ const Header: FC = () => {
   const [value, setValue] = useState<string>();
   return (
     <div className={prefixCls}>
-      <h3>贝贝</h3>
+      <h3>贝贝菜单</h3>
       <Input
+        style={{
+          '--font-size': '14px',
+        }}
         placeholder="输入菜名"
         value={value}
         onChange={(val) => {

@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   gap: 12px;
   width: 100%;
-  padding: 64px 12px 50px;
 
   &-item {
     width: calc(50% - 6px);
@@ -26,9 +25,31 @@
     &-info {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 4px;
       font-size: 12px;
       color: #666;
+
+      > div {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+    }
+
+    &-add {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      background-color: #ffa12e;
+
+      &.@{list-prefix-list}-item-active {
+        background-color: #fff;
+        border: 1px solid #ffa12e;
+      }
     }
   }
 }
